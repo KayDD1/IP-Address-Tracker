@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+:root {
+  --veryDarkGray: hsl(0, 0%, 17%);
+  --darkGray: hsl(0, 0%, 59%);
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 18px;
+  font-family: 'Rubik', sans-serif;
+  background-color: aqua;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+}
+.map-container {
+  width: 100%;
+  height: 40%;
+  background-image: url('./images/pattern-bg.png');
+  background-size: cover;
+  text-align: center;
+}
+.title {
+  color: white;
+  padding-top: 2rem;
+  word-spacing: 2px;
+  font-weight: 500;
+}
+.form-container input {
+  width: 420px;
+  height: 45px;
+  border: none;
+  border-radius: 10px;
+  padding-left: 1rem;
+  margin-top: 30px;
+  outline: none;
+}
+.form-container input::placeholder {
+  font-weight: 500;
+  color: var(--veryDarkGray);
+}
+.form-container button {
+  height: 45px;
+  width: 50px;
+  color: white;
+  background-color: var(--veryDarkGray);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-left: -10px;
+}
+.result-display-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 60px;
+  padding: 20px;
+}
+.result {
+  margin-bottom: 10px;
+}
+.result h4 {
+  margin-bottom: 10px;
+  color: var(--darkGray);
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+.result span {
+  color: var(--veryDarkGray);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#mapid {
+  transform: translateY(-40%);
+  height: 600px;
+  z-index: -1;
+}
+
+@media screen and (min-width: 1000px) {
+  .result-display-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .result {
+    padding-right: 3rem;
+  }
+  .result-location,
+  .result-timeZone,
+  .result-isp {
+    border-left: 1px solid var(--darkGray);
+    margin-left: 1rem;
+    font-weight: 400;
+  }
+  .result-ip {
+    padding-bottom: 2rem;
+  }
+  #mapid {
+    height: 800px;
+  }
+}
